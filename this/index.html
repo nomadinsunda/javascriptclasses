@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    Hello World</br>
+    <p1>DOM 이벤트 핸들러 (일반 함수 vs 화살표 함수)</br></p1>
+    <p2>이 코드는 브라우저에서 버튼을 추가하고 테스트할 수 있습니다:</br></p2>
+    <button id="btn">Click me</button>
+    <script>
+      const button = document.getElementById("btn");
+
+      // 일반 함수
+      button.addEventListener("click", function () {
+        console.log("function:", this); // <button> 요소
+      });
+
+      // 화살표 함수
+      button.addEventListener("click", () => {
+        console.log("arrow:", this); // window (외부 스코프)
+      });
+    </script>
+  </body>
+</html>
