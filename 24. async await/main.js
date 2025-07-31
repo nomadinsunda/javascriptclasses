@@ -73,6 +73,21 @@ async function processParallel() {
 processParallel();
 
 // ✅ 6. API 호출 예제 (JSONPlaceholder 사용)
+// :JSONPlaceholder는 실제 서버 없이 프런트엔드 및 백엔드 개발자가 
+//  모의 데이터(mock data)를 테스트하거나 실습용으로 사용할 수 있도록 제공하는 무료 REST API 서비스
+/*
+fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then(response => {
+    console.log("👉 응답 도착:", response); // Response 객체
+    return response.json(); // JSON 본문 파싱 (또한 Promise 반환)
+  })
+  .then(data => {
+    console.log("📦 실제 데이터:", data); // 실제 유저 정보
+  })
+  .catch(error => {
+    console.error("❌ 오류 발생:", error);
+  });
+*/
 async function fetchUser(userId) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
   const user = await res.json();

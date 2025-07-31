@@ -62,7 +62,7 @@ function asyncAdd(x, y) {
 }
 asyncAdd(3, 4)
   .then(result => console.log("3: 합계:", result))
-  .catch(error => console.error("3:", error));
+  .catch(error => console.error("3:", error)); // 3: ❌ 숫자만 입력하세요
 
 // ✅ 4. Promise.all
 Promise.all([

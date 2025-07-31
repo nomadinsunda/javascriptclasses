@@ -11,6 +11,15 @@ const user = {
 console.log(user.name);     // Alice
 console.log(user["age"]);   // 25
 user.greet();               // Hello, Alice
+user.address = "Seoul";
+console.log(user.address);
+
+const Bike = new Object();
+Bike.gear = 5;
+Bike.price = 40000;
+console.log(Bike.gear);
+console.log(Bike.price);
+
 
 
 // ✅ 2. 객체 생성자 사용
@@ -28,6 +37,13 @@ person1.introduce();        // Hi, I'm Bob and I'm 30
 
 // ✅ 3. 클래스 사용
 class Car {
+
+  age = 30;
+
+  #id = 123;
+
+  static species = "Vehicle";
+  
   constructor(brand) {
     this.brand = brand;
     this.speed = 0;
@@ -40,14 +56,38 @@ class Car {
     this.speed -= 5;
     console.log(`${this.brand} speed: ${this.speed}`);
   }
+
+  #secret() {
+    console.log("This is private");
+  }
+
+   displayName() {
+    return this.brand.toUpperCase();
+  }
+
+  // set displayName(value) {
+  //   this.brand = value;
+  // }
+
+  // 🔹 Static Method
+  static create(brand) {
+    return new Car(brand);
+  }
 }
+
+const yourCar = Car.create("Hyundai");
+console.log(yourCar.accelerate());
+console.log("###################");
+// yourCar.displayName("Good");
+// let name = yourCar.displayName();
+// console.log(name);
 
 const myCar = new Car("Hyundai");
 myCar.accelerate();         // Hyundai speed: 10
 myCar.brake();              // Hyundai speed: 5
+myCar.displayName();
 
-
-// ✅ 4. 동적 속성 접근과 추가
+// ✅ 4. 동적 속성 추가하고 액세스
 const key = "email";
 user[key] = "alice@example.com";
 console.log(user.email);    // alice@example.com

@@ -65,7 +65,7 @@ const original = [1, 2, 3];
 const copy = [...original];
 console.log("배열 복사:", copy);
 
-// 함수의 가변 인자 처리 (Rest)
+// 함수의 가변 아규먼트 처리 (Rest)
 function logAll(...items) {
   for (const item of items) {
     console.log("받은 값:", item);

@@ -55,13 +55,26 @@ console.log("\n✅ 6. 깊은 복사 vs 얕은 복사");
 // 얕은 복사: 참조만 복사됨
 let shallowUser = { name: "Tom" };
 let shallowCopy = shallowUser;
+// "Tom" -> string : 기본 타입이라고 하지만,
+// name의 값은 "Tom" 메모리 주소
+// 'T', 'o', 'm' -> 복사를 하지 않고...
 shallowCopy.name = "Jerry";
+// name 키의 값은 0x6AC34F..
 
 console.log("shallowUser.name:", shallowUser.name); // "Jerry"
 
 // 깊은 복사: 완전히 다른 객체
 let deepUser = { name: "Sam", age: 20 };
 let deepCopy = JSON.parse(JSON.stringify(deepUser));
+/*
+{
+    "name": "Sam",
+    "age": "20"
+}
+
+{ name: "Max", age: 20 }
+
+*/
 deepCopy.name = "Max";
 
 console.log("deepUser.name:", deepUser.name); // "Sam"

@@ -3,12 +3,19 @@ const values = [false, 0, -0, 0n, "", null, undefined, NaN, "hello", 42, [], {},
 
 values.forEach((val, i) => {
   let display;
+
   if (typeof val === "bigint") {
     display = val.toString() + "n";
   } else if (typeof val === "function") {
     display = "function() {}";
-  } else {
+  } /*else if (typeof val === "boolean") {
     display = JSON.stringify(val);
+  }*/ 
+  else {
+    // json 직렬화 : 자바스크립트 Object를 json으로
+    //      역직렬화 : json을 자바스크립트 Object로
+    display = JSON.stringify(val);
+    // const xx = JSON.parse(display);
   }
 
   const result = val ? "Truthy" : "Falsy";

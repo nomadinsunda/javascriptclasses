@@ -26,7 +26,7 @@ function scopeTest() {
     var blockVar = "var는 블록 무시";
     console.log(blockLet);    // 
     console.log(blockConst);  // 
-  }
+  }  
 
   // console.log(blockLet);    //  ReferenceError
   // console.log(blockConst);  //  ReferenceError

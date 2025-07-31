@@ -20,6 +20,8 @@ function showDashboard() {
 }
 
 let isLoggedIn = true;
+
+
 isLoggedIn && showDashboard();
 
 let isAdmin = false;

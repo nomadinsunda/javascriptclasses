@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>History API + iframe Demo</title>
+  <style>
+    nav button {
+      margin-right: 1rem;
+    }
+    iframe {
+      width: 100%;
+      height: 80vh;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏁 History API + iframe 시뮬레이션</h1>
+
+  <nav>
+    <button onclick="navigateTo('/')">Home</button>
+    <button onclick="navigateTo('/about.html')">About</button>
+    <button onclick="navigateTo('/contact.html')">Contact</button>
+  </nav>
+
+  <iframe id="frame" src="/index.html"></iframe>
+
+  <script src="router.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Redux 중급 상태 관리 예제</title>
+</head>
+<body>
+  <h1>Redux 예제: 다중 상태</h1>
+
+  <div>
+    <button id="decrement">-</button>
+    <span id="count">0</span>
+    <button id="increment">+</button>
+  </div>
+
+  <div style="margin-top: 1rem;">
+    <label>
+      증가/감소 step:
+      <input id="step" type="number" value="1" />
+    </label>
+  </div>
+
+  <div>
+    <button id="reset">초기화</button>
+  </div>
+
+  <div>
+    <h3>사용자 로그</h3>
+    <ul id="log">
+      
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

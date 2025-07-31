@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SPA: History API Only</title>
+  <style>
+    body { font-family: sans-serif; }
+    nav button {
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
+    #app {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 SPA with History API (No External HTML)</h1>
+
+  <nav>
+    <button onclick="navigateTo('/')">Home</button>
+    <button onclick="navigateTo('/about')">About</button>
+    <button onclick="navigateTo('/contact')">Contact</button>
+  </nav>
+
+  <div id="app">Loading...</div>
+
+  <script src="router.js"></script>
+</body>
+</html>
+<!-- npx serve -s .  커맨드 라인을 실행 -->
+
+<!-- npm install -g serve 커맨드 라인으로 로컬에 설치후, -->
+<!-- serve -s . 커맨드 라인으로 실행-->

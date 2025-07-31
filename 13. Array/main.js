@@ -10,7 +10,7 @@ console.log(fruits[2]); // 오렌지
 // ✅ 예제 2: 다양한 생성 방법
 const a = [1, 2, 3];
 const b = new Array(3);       // [empty × 3]
-const c = Array.of(10);       // [10]
+const c = Array.of(10,20,30,40,50,60);       // [10]
 const d = Array.from("Hi!");  // ['H', 'i', '!']
 
 console.log("arrays:");

@@ -38,18 +38,21 @@ const { id: userId } = user;
 console.log("별칭:", userId); // 101
 
 // 디폴트값 설정
-const { age = 30 } = { name: "Eve" };
+const { age = 30} = { name: "Eve" };
 console.log("디폴트값:", age); // 30
-
+// console.log("name : " + name); // name: "Eve"는?
 
 // ✅ 3. 함수 파라미터 구조 분해
 console.log("\n✅ 함수 파라미터 구조 분해");
 
 // 객체 파라미터
+// {name, age} = guest
 function printUser({ name, age }) {
   console.log(`User: ${name} (${age})`);
 }
-printUser({ name: "David", age: 28 }); // David (28)
+const guest = { name: "David", age: 28 };
+printUsuer(guest);
+// printUser({ name: "David", age: 28 }); // David (28)
 
 // 디폴트값 포함
 function greet({ name = "Guest" }) {
@@ -72,15 +75,14 @@ const user2 = {
   id: 1,
   profile: {
     name: "Jane",
-    contact: { email: "jane@example.com" }
+    contact: { 
+      email: "jane@example.com" 
+    }
   }
 };
 
-const {
-  profile: {
-    contact: { email }
-  }
-} = user2;
+// const { name, age } = user;
+const { profile: { contact: { email }  } } = user2;
 
 // user2.profile.contact.email에서 구조 분해로 추출된 변수
 console.log("중첩 email:", email); // "jane@example.com"
@@ -115,11 +117,7 @@ console.log("중첩 email:", email); // "jane@example.com"
 // ✅ 최종 정리
 ////////////////////////////////////////////
 // 아래 한 줄은
-// const {
-//   profile: {
-//     contact: { email }
-//   }
-// } = user2;
+// const { profile: { contact: { email }  } } = user2;
 
 // 
 // 이렇게 세 줄로 풀어 쓸 수 있음
@@ -183,6 +181,11 @@ const { x2, y2 } = obj;
 function f({ a, b }) {
   return a + b;
 }
+const objEx = {
+  a: 1,
+  b: 1
+}
+f(objEx);
 
 // 나머지 요소
 const [head2, ...tail] = [1, 2, 3, 4];

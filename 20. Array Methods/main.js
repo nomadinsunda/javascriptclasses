@@ -110,3 +110,33 @@ const methods = [
 ];
 
 console.table(methods);
+
+const students = [
+  { name: "Alice", score: 88 },
+  { name: "Bob", score: 62 },
+  { name: "Charlie", score: 95 },  // a
+  { name: "David", score: 74 },   // b   ---> 0 > ret : a가 ...
+  { name: "John", score: 74 }
+];
+
+const result2 = students
+  .filter(student => student.score >= 70) // 70점 이상만
+  .sort((a, b) => b.score - a.score)     // 점수순 내림차순 : 큰 값 순으로 내림 정렬?...
+  .map(student => student.name);         // 이름만 추출 : 새로운 배열
+
+  // sort 결과값 : 0보다 크면, b가 선택
+  //             0보다 작으면, a가 선택
+  //             0이면 a를 선택
+
+console.log(result2); // ['Charlie', 'Alice', 'David', 'John']
+
+
+const scores = ["90", "85", "70", "88"];
+
+const average = scores
+  .map(Number)  // Number -> NumberConstructor : Number("90") -> 90 Integer, Number("85") -> 85, Number("70") -> 70.. [90, 85, 70, 88];
+  .filter(n => n >= 80)  // [90, 85, 88];
+  // callback(accumulator, currentValue, currentIndex, array)
+  .reduce((acc, cur, _, arr) => acc + cur / arr.length, 0); // 0이 acc의 초기값
+
+console.log(average); // 평균 점수: (90 + 85 + 88) / 3 = 87.67

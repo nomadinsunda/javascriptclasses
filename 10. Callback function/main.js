@@ -23,9 +23,11 @@ function downloadFile(filename, onSuccess) {
   }, 2000);
 }
 
-downloadFile("report.pdf", function(name) {
-  console.log(name + "을 열어봅니다.");
-});
+// 
+
+downloadFile("report.pdf", 
+  (name) => console.log(name + "을 열어봅니다.")
+);
 
 // 흐름 시각화 실습
 // "콜백 함수가 전달되고, 나중에 호출되는 흐름"을 체험
@@ -78,9 +80,8 @@ function repeat(n, callback) {
 }
 
 // 익명 함수 전달
-repeat(3, function(i) {
-  console.log(i + "번째 반복");
-});
+repeat(3, 
+  (i) => console.log(i + "번째 반복"));
 
 // 화살표 함수 전달
 repeat(2, i => console.log("Arrow:", i));
