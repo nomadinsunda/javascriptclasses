@@ -15,6 +15,7 @@ for (const fruit of fruits) {
 }
 
 // 🔸 1.3 forEach()
+// const fruits = ['apple', 'banana', 'cherry'];
 console.log("▶ forEach:");
 fruits.forEach((item, index) => {
   console.log(`${index}: ${item}`);

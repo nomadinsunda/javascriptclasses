@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>회의실 실시간 검색</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>🏢 회의실 검색</h1>
+  </header>
+
+  <main class="wrapper">
+    <h2>회의실 목록</h2>
+    <p class="desc">
+      검색어를 입력하면 회의실 목록이 실시간으로 필터링됩니다.
+    </p>
+
+    <div class="search-area">
+      <label for="search-room">회의실 이름</label>
+      <input
+        type="text"
+        id="search-room"
+        placeholder="회의실명을 입력하세요"
+      />
+    </div>
+
+    <ul class="room-list">
+      <li class="room-item">알파 회의실</li>
+      <li class="room-item">베타 회의실</li>
+      <li class="room-item">감마 회의실</li>
+      <li class="room-item">대회의실 A</li>
+      <li class="room-item">대회의실 B</li>
+      <li class="room-item">소회의실 1</li>
+    </ul>
+
+    <p class="empty-message" id="empty-message">
+      일치하는 회의실이 없습니다.
+    </p>
+  </main>
+
+  <footer class="footer">
+    ⓒ 회의실 검색 예제
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

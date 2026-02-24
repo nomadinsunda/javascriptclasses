@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript 탭 인터랙션 UI - 예제 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main>
+    <h2>과일 정보 탭</h2>
+    <p class="desc">
+      탭 버튼을 클릭하면 해당 과일 정보만 표시됩니다.
+    </p>
+
+    <div class="tabs">
+      <!-- css는 class="tab-btn active"를 .tab-btn.active 이라고 해석함-->
+      <button class="tab-btn active" data-target="tab-apple">사과</button>
+      <button class="tab-btn" data-target="tab-banana">바나나</button>
+      <button class="tab-btn" data-target="tab-orange">오렌지</button>
+    </div>
+
+    <div class="tab-contents">
+      <div id="tab-apple" class="tab-content active">
+        <h3>사과</h3>
+        <p>사과는 비타민과 식이섬유가 풍부한 과일입니다.</p>
+      </div>
+
+      <div id="tab-banana" class="tab-content">
+        <h3>바나나</h3>
+        <p>바나나는 에너지원으로 좋고 소화가 잘 됩니다.</p>
+      </div>
+
+      <div id="tab-orange" class="tab-content">
+        <h3>오렌지</h3>
+        <p>오렌지는 비타민 C가 풍부한 과일입니다.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

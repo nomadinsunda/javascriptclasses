@@ -38,9 +38,9 @@ const { id: userId } = user;
 console.log("별칭:", userId); // 101
 
 // 디폴트값 설정
-const { age = 30} = { name: "Eve" };
+const { age = 30} = { nameA: "Eve" };
 console.log("디폴트값:", age); // 30
-// console.log("name : " + name); // name: "Eve"는?
+// console.log("nameA : " + nameA); // name: "Eve"는?
 
 // ✅ 3. 함수 파라미터 구조 분해
 console.log("\n✅ 함수 파라미터 구조 분해");
@@ -51,7 +51,7 @@ function printUser({ name, age }) {
   console.log(`User: ${name} (${age})`);
 }
 const guest = { name: "David", age: 28 };
-printUsuer(guest);
+printUser(guest);
 // printUser({ name: "David", age: 28 }); // David (28)
 
 // 디폴트값 포함
@@ -83,6 +83,10 @@ const user2 = {
 
 // const { name, age } = user;
 const { profile: { contact: { email }  } } = user2;
+// 아래 코드는 사용할 수 없음 : 최종적으로 email에 구조 분해 값이 할당됨
+// console.log("🚀 ~ contact:", contact);
+// console.log("🚀 ~ profile:", profile);
+
 
 // user2.profile.contact.email에서 구조 분해로 추출된 변수
 console.log("중첩 email:", email); // "jane@example.com"
@@ -123,7 +127,7 @@ console.log("중첩 email:", email); // "jane@example.com"
 // 이렇게 세 줄로 풀어 쓸 수 있음
 // const profile = user2.profile;
 //const contact = profile.contact;
-// const email = contact.email;
+// const email = contact.email; --> email만 사용할 수 있음.
 ////////////////////////////////////////////
 
 
@@ -135,6 +139,10 @@ const people = [
   { name: "Lee", age: 30 },
   { name: "Kim", age: 25 }
 ];
+
+// for (const obj of people) {
+//   console.log(`${obj.name}: ${obj.age}`);
+// }
 
 for (const { name, age } of people) {
   console.log(`${name}: ${age}`);
@@ -149,14 +157,28 @@ const config = {
   server: { host: "localhost" }
 };
 
+
+
+// 객체 구조 분해 할당 문법
 const {
-  port: p = 3000,
-  server: { host: h = "127.0.0.1" }
+  port: p = 3000, // Aliasing : config.port의 별칭을 p로...그런데 만약 config.port가 없다면 p의 값은 디폴트로 3000
+  server: { host: h = "127.0.0.1" } // Aliasing : config.server.host의 별칭을 h로...그런데 만약 없다면
 } = config;
 
 console.log("포트:", p); // 8080
 console.log("호스트:", h); // "localhost"
 
+const configx = {
+  server: { }
+};
+
+const {
+  port: p2 = 3000, // Aliasing : config.port의 별칭을 p로...그런데 만약 config.port가 없다면 p의 값은 디폴트로 3000
+  server: { host: h2 = "127.0.0.1" } // Aliasing : config.server.host의 별칭을 h로...그런데 만약 없다면
+} = configx;
+
+console.log("포트:", p2); // 8080
+console.log("호스트:", h2); // "localhost"
 
 // ⚠️ 에러 상황 테스트 (디버깅 팁)
 console.log("\n⚠️ 에러 테스트");
